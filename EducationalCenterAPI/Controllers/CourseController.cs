@@ -15,5 +15,11 @@ namespace EducationalCenterAPI.Controllers
             });
             return res;
         }
+
+        [HttpGet("{id:int}")]
+        public object getbyid(int id)
+        {
+            return id;
+        }
     }
 }
