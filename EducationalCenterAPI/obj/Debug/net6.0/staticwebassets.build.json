@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "+AdkA08SrqHASUnlD6ES3xYzjNMc8RgikI/Eoh9woQ4=",
+  "Source": "EducationalCenterAPI",
+  "BasePath": "_content/EducationalCenterAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "EducationalCenterAPI\\wwwroot",
+      "Source": "EducationalCenterAPI",
+      "ContentRoot": "C:\\Users\\Faxriddin\\source\\repos\\EducationalCenter\\EducationalCenterAPI\\wwwroot\\",
+      "BasePath": "_content/EducationalCenterAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
