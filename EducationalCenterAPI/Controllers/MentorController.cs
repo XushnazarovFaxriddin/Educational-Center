@@ -33,5 +33,12 @@ namespace EducationalCenterAPI.Controllers
         {
             return Ok(await _mentorRepository.AddMentorAsync(postMentor));
         }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var mentor = await _mentorRepository.DeleteMentorByIdAsync(id);
+            return Ok(mentor);
+        }
     }
 }

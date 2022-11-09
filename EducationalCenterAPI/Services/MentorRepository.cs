@@ -44,9 +44,14 @@ namespace EducationalCenterAPI.Services
             return men;
         }
 
-        public Task<Mentor> DeleteMentorByIdAsync(int id)
+        public async Task<Mentor> DeleteMentorByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var mentor = await this.GetMentorByIdAsync(id);
+            string fullPath = Path.Combine(_webHost.WebRootPath, mentor.ImageUrl);
+            System.IO.File.Delete(fullPath);
+            _dataContext.Mentors.Remove(mentor);
+            await _dataContext.SaveChangesAsync();
+            return mentor;
         }
 
         public async Task<IEnumerable<Mentor>> GetAllMentorsAsync()
@@ -64,7 +69,7 @@ namespace EducationalCenterAPI.Services
             return mentor;
         }
 
-        public Task<Mentor> UpdateMentorByIdAsync(Mentor mentor)
+        public Task<Mentor> UpdateMentorByIdAsync(PostMentor mentor)
         {
             throw new NotImplementedException();
         }

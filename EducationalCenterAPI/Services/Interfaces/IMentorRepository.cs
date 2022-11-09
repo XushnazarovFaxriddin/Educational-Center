@@ -8,7 +8,7 @@ namespace EducationalCenterAPI.Services.Interfaces
         Task<IEnumerable<Mentor>> GetAllMentorsAsync();
         Task<Mentor> GetMentorByIdAsync(int id);
         Task<Mentor> DeleteMentorByIdAsync(int id);
-        Task<Mentor> UpdateMentorByIdAsync(Mentor mentor);
+        Task<Mentor> UpdateMentorByIdAsync(PostMentor mentor);
         Task<Mentor> AddMentorAsync(PostMentor mentor);
     }
 }
