@@ -13,6 +13,7 @@ string connectionString = builder.Configuration.GetConnectionString("DefCon");
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddScoped<IMentorRepository, MentorRepository>();
+builder.Services.AddTransient<IAuthService, AuthService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

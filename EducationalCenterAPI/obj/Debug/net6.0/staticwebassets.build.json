@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Db37SYyD2XuvqJRIDAdyYIoYWbMTxhLMLSKplUUti2I=",
+  "Hash": "xe01O+4thZOHx8k92gvLUPnNVICWyLYEmPAOqRPx+m4=",
   "Source": "EducationalCenterAPI",
   "BasePath": "_content/EducationalCenterAPI",
   "Mode": "Default",
@@ -16,23 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\Faxriddin\\source\\repos\\EducationalCenter\\EducationalCenterAPI\\wwwroot\\images\\mentors\\055f9098-bab9-4975-81d4-74a4bd89eb2b.jpg",
-      "SourceId": "EducationalCenterAPI",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Faxriddin\\source\\repos\\EducationalCenter\\EducationalCenterAPI\\wwwroot\\",
-      "BasePath": "_content/EducationalCenterAPI",
-      "RelativePath": "images/mentors/055f9098-bab9-4975-81d4-74a4bd89eb2b.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\mentors\\055f9098-bab9-4975-81d4-74a4bd89eb2b.jpg"
-    },
     {
       "Identity": "C:\\Users\\Faxriddin\\source\\repos\\EducationalCenter\\EducationalCenterAPI\\wwwroot\\images\\mentors\\6bdb9fb9-73d2-41ca-86f7-080941bcc12e.jpg",
       "SourceId": "EducationalCenterAPI",

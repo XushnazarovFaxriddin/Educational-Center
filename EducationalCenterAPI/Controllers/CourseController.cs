@@ -7,7 +7,7 @@ namespace EducationalCenterAPI.Controllers
     public class CourseController : ControllerBase
     {
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             var res = StatusCode(StatusCodes.Status200OK, new
             {
