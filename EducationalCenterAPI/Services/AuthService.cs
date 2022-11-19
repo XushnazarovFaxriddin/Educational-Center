@@ -47,9 +47,10 @@ public class AuthService : IAuthService
         user.FIO = registerModel.FIO;
         user.Username = registerModel.Username;
         user.Password = ToPasswordHash(registerModel.Password);
+        user.UserToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()));
+
         await _db.Users.AddAsync(user);
         await _db.SaveChangesAsync();
-        user.UserToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()));
         return user;
     }
 

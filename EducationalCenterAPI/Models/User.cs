@@ -2,7 +2,7 @@
 
 namespace EducationalCenterAPI.Models;
 
-public class User:RegisterModel
+public class User : RegisterModel
 {
     public int UserId { get; set; }
 
