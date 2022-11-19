@@ -1,4 +1,5 @@
-﻿using EducationalCenterAPI.Models.PostModels;
+﻿using EducationalCenterAPI.Entitys;
+using EducationalCenterAPI.Models.PostModels;
 using EducationalCenterAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,7 +15,7 @@ namespace EducationalCenterAPI.Controllers
             _mentorRepository = mentorRepository;
         }
 
-        [HttpGet]
+        [HttpGet, Authorize]
         public async Task<IActionResult> GetAll()
         {
             var mentors = await _mentorRepository.GetAllMentorsAsync();

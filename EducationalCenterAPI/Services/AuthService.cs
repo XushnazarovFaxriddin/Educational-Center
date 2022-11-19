@@ -16,14 +16,26 @@ public class AuthService : IAuthService
         _db = db;
     }
 
+    public async Task<User> GetUserByToken(string token)
+    {
+        var user = await _db.Users
+            .FirstOrDefaultAsync(user => user.UserToken == token);
+        if (user == null)
+            throw new UnauthorizedAccessException("Foydalanuvchi tizimga kiragan! " +
+                "Yoki ayni vaqtda boshqa foydalanuvchi bu accountdan foydalamoqda!");
+        return user;
+    }
+
     public async Task<User> LoginAsync(LoginModel login)
     {
         var user = await _db.Users
-            .FirstOrDefaultAsync(user=> user.Username == login.Username);
+            .FirstOrDefaultAsync(user => user.Username == login.Username);
         if (user == null)
             throw new UnauthorizedAccessException("Login yoki parol xato");
         if (!IsPasswordValid(user.Password, login.Password))
             throw new UnauthorizedAccessException("Login yoki parol xato");
+        user.UserToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()));
+        await _db.SaveChangesAsync();
         return user;
     }
 
@@ -37,6 +49,7 @@ public class AuthService : IAuthService
         user.Password = ToPasswordHash(registerModel.Password);
         await _db.Users.AddAsync(user);
         await _db.SaveChangesAsync();
+        user.UserToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()));
         return user;
     }
 
